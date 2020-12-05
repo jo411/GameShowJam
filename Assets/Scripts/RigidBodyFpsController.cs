@@ -17,6 +17,7 @@ public class RigidBodyFpsController : MonoBehaviour
 	public Transform PlayerCamera;
 
 	private bool grounded = false;
+	private bool isLockedOut = false;
 	private Rigidbody rigidBody;
 
 	void Awake()
@@ -31,7 +32,7 @@ public class RigidBodyFpsController : MonoBehaviour
 	void FixedUpdate()
 	{
 		//rigidBody.rotation.SetLookRotation(PlayerCamera.rotation.eulerAngles, Vector3.up);
-		if (grounded)
+		if (grounded && !isLockedOut)
 		{
 			float h = Input.GetAxis("Horizontal");
 			float v = Input.GetAxis("Vertical");
@@ -73,5 +74,16 @@ public class RigidBodyFpsController : MonoBehaviour
 	{	
 		return Mathf.Sqrt(2 * jumpHeight * gravity);
 	}
+
+	void UnlockControls()
+    {
+		isLockedOut = false;
+    }
+
+	public void LockoutControls(int seconds=1)
+    {
+		isLockedOut = true;
+		Invoke("UnlockControls", seconds);
+    }
 
 }
