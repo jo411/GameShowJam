@@ -31,7 +31,9 @@ public class PauseScript : MonoBehaviour
         Time.timeScale = 0f;
         AudioListener.pause = true;
         PauseMenu.SetActive(true);
-        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
     }
 
     public void deactivateMenu()
@@ -40,6 +42,7 @@ public class PauseScript : MonoBehaviour
         PauseMenu.SetActive(false);
         AudioListener.pause = false;
         Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Quit()
@@ -49,12 +52,17 @@ public class PauseScript : MonoBehaviour
 
     public void MainMenu()
     {
-        LevelChanger levelChanger = GameObject.Find("LevelChanger").GetComponent<LevelChanger>();
-        
+
         deactivateMenu();
 
-        if (levelChanger != null)
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        GameObject LevelChangerObj = GameObject.Find("LevelChanger") as GameObject;
+
+        if (LevelChangerObj != null)
         {
+            LevelChanger levelChanger = LevelChangerObj.GetComponent(typeof(LevelChanger)) as LevelChanger;
             levelChanger.FadeToLevel("MainMenu");
         } else
         {
