@@ -19,6 +19,13 @@ public class KnockupTrigger : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        if(other.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<RigidBodyFpsController>().LockoutControls();
+        }else if(other.CompareTag("zombie"))
+        {
+            other.gameObject.GetComponent<ZombieController>().DisableNavmeshAgentForSeconds();
+        }
       
         Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
 
@@ -26,8 +33,6 @@ public class KnockupTrigger : MonoBehaviour
         {           
             Vector3 knockbackdir =  rb.transform.position- transform.position + new Vector3(0,.5f,0);
             knockbackdir = knockbackdir.normalized;
-          
-            Debug.Log(knockbackdir * knockBackForce);
             
             rb.AddForce(knockbackdir * knockBackForce, ForceMode.Impulse);
         }
