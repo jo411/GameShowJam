@@ -50,7 +50,16 @@ public class PauseScript : MonoBehaviour
     public void MainMenu()
     {
         LevelChanger levelChanger = GameObject.Find("LevelChanger").GetComponent<LevelChanger>();
+        
         deactivateMenu();
-        levelChanger.FadeToLevel("MainMenu");
+
+        if (levelChanger != null)
+        {
+            levelChanger.FadeToLevel("MainMenu");
+        } else
+        {
+            SceneManager.LoadSceneAsync("MainMenu");
+        }
+
     }
 }
