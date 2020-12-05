@@ -10,6 +10,8 @@ public class MenuController : MonoBehaviour
     public GameObject mainMenuLocation;
     public GameObject creditsMenuLocation;
     public GameObject levelMenuLocation;
+    public GameObject cameraStart;
+    public Animator animator;
 
     [Scene]
     public List<string> levels;
@@ -54,9 +56,20 @@ public class MenuController : MonoBehaviour
         Application.OpenURL("https://open.spotify.com/artist/2x4nKS8WqFNdbDg51xUvw1?si=6CAJwkOzT1-qsoSDE9F2MA");
     }
 
-    private void goToLevel(string level)
+    public void goToLevel(string level)
     {
-        SceneManager.LoadSceneAsync(level);
+        CameraMovmentController cameraMovment = mainCamera.GetComponent<CameraMovmentController>();
+        cameraMovment.setCameraTarget(cameraStart);
+        StartCoroutine(loadLevelAfterAnimation(level, cameraMovment.cameraSpeed));
+    }
+
+    IEnumerator loadLevelAfterAnimation(string level, float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        LevelChanger levelChanger = GameObject.Find("LevelChanger").GetComponent<LevelChanger>();
+
+        levelChanger.FadeToLevel(level);
     }
 }
 
