@@ -18,13 +18,16 @@ public class RigidBodyFpsController : MonoBehaviour
 
 	private bool grounded = false;
 	private bool isLockedOut = false;
-	private Rigidbody rigidBody;
+	private Rigidbody rb;
+
+
+	public Rigidbody spinningPlatform;
 
 	void Awake()
     {
-		rigidBody = GetComponent<Rigidbody>();
-        rigidBody.freezeRotation = true;
-        rigidBody.useGravity = false;
+		rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
+        rb.useGravity = false;
 		Cursor.lockState = CursorLockMode.Locked;
 
 	}
@@ -39,28 +42,45 @@ public class RigidBodyFpsController : MonoBehaviour
 
 			Quaternion cameraRotation = Quaternion.Euler(0, PlayerCamera.rotation.eulerAngles.y, 0);
 
-			rigidBody.MoveRotation(cameraRotation);
+			rb.MoveRotation(cameraRotation);
 		
 			Vector3 targetVelocity = new Vector3(h, 0, v);
 
 			targetVelocity = transform.TransformDirection(targetVelocity);
 			targetVelocity *= speed;	
 			
-			Vector3 velocity = rigidBody.velocity;
+			Vector3 velocity = rb.velocity;
 			Vector3 velocityChange = (targetVelocity - velocity);
+
+
+
+			if (spinningPlatform != null)
+			{
+				float r = (spinningPlatform.gameObject.transform.position - transform.position).magnitude;
+				Vector3 tangentialVelocity = spinningPlatform.angularVelocity;
+				tangentialVelocity.Scale(new Vector3(r, r, r));
+				//rb.angularVelocity= tangentialVelocity;				
+				Debug.Log(tangentialVelocity);
+
+			}
+
+
 			velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
 			velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
 			velocityChange.y = 0;
-			rigidBody.AddForce(velocityChange, ForceMode.VelocityChange);			
+			rb.AddForce(velocityChange, ForceMode.VelocityChange);			
 
 			if (canJump && Input.GetButton("Jump"))
 			{
-				rigidBody.velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
+				rb.velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
 			}
+
+
+
 		}
 		
 		
-		rigidBody.AddForce(new Vector3(0, -gravity * rigidBody.mass, 0));
+		rb.AddForce(new Vector3(0, -gravity * rb.mass, 0));
 	
 		grounded = false;
 	}
