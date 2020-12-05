@@ -32,6 +32,11 @@ public class MenuController : MonoBehaviour
         CameraMovmentController cameraMovment = mainCamera.GetComponent<CameraMovmentController>();
         cameraMovment.setCameraTarget(mainMenuLocation);
     }
+
+    public void SpotifyLink()
+    {
+        Application.OpenURL("https://open.spotify.com/artist/2x4nKS8WqFNdbDg51xUvw1?si=6CAJwkOzT1-qsoSDE9F2MA");
+    }
 }
 
 

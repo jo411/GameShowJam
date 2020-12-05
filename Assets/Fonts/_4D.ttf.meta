@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 32b7d72d0c6c9ab4395ee2446364a505
+guid: 09227344356c15343a608b91bdbfdce6
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Future Rot
+  - fonteditor
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
