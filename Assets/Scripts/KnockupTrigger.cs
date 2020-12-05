@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class KnockupTrigger : MonoBehaviour
 {    
-    float knockBackForce = 20f;
+    public float knockBackForce = 20f;
+    public float height = .5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +32,7 @@ public class KnockupTrigger : MonoBehaviour
 
         if(rb!=null)
         {           
-            Vector3 knockbackdir =  rb.transform.position- transform.position + new Vector3(0,.5f,0);
+            Vector3 knockbackdir =  rb.transform.position- transform.position + new Vector3(0,height,0);
             knockbackdir = knockbackdir.normalized;
             
             rb.AddForce(knockbackdir * knockBackForce, ForceMode.Impulse);
