@@ -6,6 +6,13 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class ZombieController : MonoBehaviour
 {
+
+    private enum AIState
+    {
+        Chasing,
+        Fleeing
+    }
+
     GameObject target;
     NavMeshAgent agent;
     Rigidbody rb;
@@ -18,6 +25,10 @@ public class ZombieController : MonoBehaviour
 
     public float health = 1f;
 
+
+    float FleeDistance = 6.0f;
+
+    AIState currentState = AIState.Chasing;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,13 +49,42 @@ public class ZombieController : MonoBehaviour
 
         if(agent.enabled && agent.isOnNavMesh)
         {
-            agent.SetDestination(target.transform.position);
+            switch(currentState)
+            {
+                case AIState.Chasing:
+                    TargetPlayer();
+                    break;
+                case AIState.Fleeing:
+                    FleePlayer();
+                    break;
+            }
         }
+        
 
         if(health <= 0)
         {
             KillZombie();
         }        
+    }
+
+
+
+    void TargetPlayer()
+    {
+        agent.SetDestination(target.transform.position);
+    }
+
+    void FleePlayer()
+    {
+        float distance = Vector3.Distance(transform.position, target.transform.position);
+
+        if(distance<FleeDistance)
+        {
+            Vector3 dirToPlayer = transform.position - target.transform.position;
+            Vector3 newPos = transform.position + dirToPlayer;
+            agent.SetDestination(newPos);
+        }
+        
     }
 
     void checkGrounded()
