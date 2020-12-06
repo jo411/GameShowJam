@@ -44,7 +44,7 @@ public class RigidBodyFpsController : MonoBehaviour
 
 			rb.MoveRotation(cameraRotation);
 		
-			Vector3 targetVelocity = new Vector3(h, 0, v);
+			Vector3 targetVelocity = new Vector3(h, 0, v).normalized;
 
 			targetVelocity = transform.TransformDirection(targetVelocity);
 			targetVelocity *= speed;	
