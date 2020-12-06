@@ -12,15 +12,23 @@ public class PauseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+        if (LevelChanger.levelLoaded)
         {
-            if (!isPaused)
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
             {
-                activateMenu();
-            }
-            else
-            {
-                deactivateMenu();
+                Scene scene = SceneManager.GetActiveScene();
+
+                if (scene.name != "MainMenu")
+                {
+                    if (!isPaused)
+                    {
+                        activateMenu();
+                    }
+                    else
+                    {
+                        deactivateMenu();
+                    }
+                }
             }
         }
     }

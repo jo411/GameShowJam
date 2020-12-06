@@ -3013,6 +3013,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1889575975319220456, guid: 91a3b089e78884c47b19cbcc8051989d, type: 3}
   m_PrefabInstance: {fileID: 745518624}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &293437659
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1729204749356449355, guid: b0e14399a17bd8f4ba275327602a8b48, type: 3}
+      propertyPath: m_Name
+      value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729204749356449397, guid: b0e14399a17bd8f4ba275327602a8b48, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729204749356449397, guid: b0e14399a17bd8f4ba275327602a8b48, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 734.5044
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729204749356449397, guid: b0e14399a17bd8f4ba275327602a8b48, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 366.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729204749356449397, guid: b0e14399a17bd8f4ba275327602a8b48, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729204749356449397, guid: b0e14399a17bd8f4ba275327602a8b48, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729204749356449397, guid: b0e14399a17bd8f4ba275327602a8b48, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729204749356449397, guid: b0e14399a17bd8f4ba275327602a8b48, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729204749356449397, guid: b0e14399a17bd8f4ba275327602a8b48, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729204749356449397, guid: b0e14399a17bd8f4ba275327602a8b48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729204749356449397, guid: b0e14399a17bd8f4ba275327602a8b48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729204749356449397, guid: b0e14399a17bd8f4ba275327602a8b48, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b0e14399a17bd8f4ba275327602a8b48, type: 3}
 --- !u!1001 &300192996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7740,7 +7797,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MainMenu
+          m_StringArgument: SheldonsScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &673170702
