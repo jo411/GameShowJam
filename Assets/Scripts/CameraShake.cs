@@ -47,7 +47,7 @@ public class CameraShake : MonoBehaviour
 
     public void shakeCam()
     {
-        shakeCam(1.0f, .7f, 1.0f);
+        shakeCam(.2f, .2f, 1.0f);
     }
     
     public Vector3 getOffset()

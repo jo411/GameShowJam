@@ -15,6 +15,8 @@ public class ShooterGame : MonoBehaviour
     public LayerMask IgnoreMe;
     public ParticleSystem flashFX;
 
+    public Rigidbody playerRb;
+
     CameraShake camShake;
 
 
@@ -29,6 +31,7 @@ public class ShooterGame : MonoBehaviour
         fireRate = reloadSpeed;
         magazineCount = magazineSize;
         camShake = cam.GetComponent<CameraShake>();
+        playerRb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -54,8 +57,7 @@ public class ShooterGame : MonoBehaviour
         if (canFire)
         {
             magazineCount -= 1;
-
-            flashFX.Play();           
+            spawnShootFx();
 
             for (int i = 0; i < shotCount; i++)
             {
@@ -93,6 +95,17 @@ public class ShooterGame : MonoBehaviour
     void CanFire()
     {
         canFire = true;
+    }
+
+
+    void spawnShootFx()
+    {
+
+        ParticleSystem.MainModule newMain = flashFX.main;
+        float min = Mathf.Max(playerRb.velocity.magnitude * 2, newMain.startSpeed.constantMin);
+        float max = Mathf.Max(playerRb.velocity.magnitude * 2, newMain.startSpeed.constantMax);
+        newMain.startSpeed = new ParticleSystem.MinMaxCurve(min, max);
+        flashFX.Play();
     }
 
     void FireHide()
