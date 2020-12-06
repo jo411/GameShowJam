@@ -46,9 +46,9 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -115,8 +115,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.7
-      minScalar: 0.4
+      scalar: 0.5
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -660,7 +660,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 14.54
+    angle: 20
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -746,7 +746,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.0001
+      value: 0.03
       mode: 0
       spread: 0
       speed:
@@ -4002,7 +4002,7 @@ ParticleSystem:
   TrailModule:
     enabled: 1
     mode: 0
-    ratio: 0.4
+    ratio: 0.3
     lifetime:
       serializedVersion: 2
       minMaxState: 0
@@ -4056,7 +4056,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    minVertexDistance: 0.2
+    minVertexDistance: 0.1
     textureMode: 0
     ribbonCount: 1
     shadowBias: 0.5
@@ -4134,7 +4134,7 @@ ParticleSystem:
     widthOverTrail:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.36
+      scalar: 0.06
       minScalar: 1
       maxCurve:
         serializedVersion: 2

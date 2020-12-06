@@ -13,19 +13,18 @@ public class ShooterGame : MonoBehaviour
     public float knockback;
     public GameObject cam;
     public LayerMask IgnoreMe;
-    public GameObject fire;
+    public ParticleSystem flashFX;
 
     bool canFire = true;
     float fireRate;
     int magazineCount;
-    float bulletSmokeTime = 1;
+    //float bulletSmokeTime = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         fireRate = reloadSpeed;
-        magazineCount = magazineSize;
-        fire.SetActive(false);
+        magazineCount = magazineSize;        
     }
 
     // Update is called once per frame
@@ -52,9 +51,8 @@ public class ShooterGame : MonoBehaviour
         {
             magazineCount -= 1;
 
-            fire.SetActive(true);
-
-            Invoke("FireHide", .5f);
+            flashFX.Play();
+           
 
             for (int i = 0; i < shotCount; i++)
             {
@@ -82,7 +80,7 @@ public class ShooterGame : MonoBehaviour
                         rb.AddForce(forward * knockback, ForceMode.Impulse);
                     }
 
-                    Debug.Log("Fired: " + i.ToString() + " " + face.ToString() + " " + dir.ToString() + hit.transform.position.ToString());
+                    //Debug.Log("Fired: " + i.ToString() + " " + face.ToString() + " " + dir.ToString() + hit.transform.position.ToString());
                 }
             }
         }
@@ -95,6 +93,6 @@ public class ShooterGame : MonoBehaviour
 
     void FireHide()
     {
-        fire.SetActive(false);
+        
     }
 }
