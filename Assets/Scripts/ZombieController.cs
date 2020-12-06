@@ -16,6 +16,8 @@ public class ZombieController : MonoBehaviour
 
     bool grounded = true;
 
+    public float health = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +40,11 @@ public class ZombieController : MonoBehaviour
         {
             agent.SetDestination(target.transform.position);
         }
-        
+
+        if(health <= 0)
+        {
+            KillZombie();
+        }        
     }
 
     void checkGrounded()
@@ -85,5 +91,8 @@ public class ZombieController : MonoBehaviour
 
     }
 
-
+    public void KillZombie()
+    {
+        Debug.Log("Git Gud Scrub");
+    }
 }
