@@ -33,7 +33,7 @@ public class TailController : MonoBehaviour
         }
     }
 
-    private void AddTail()
+    public void AddTail()
     {
         hasTail = true;
     }

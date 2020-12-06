@@ -25,6 +25,8 @@ public class ZombieController : MonoBehaviour
 
     public float health = 1f;
 
+    bool hasTail = false;
+    bool isDead = false;
 
     float FleeDistance = 6.0f;
 
@@ -41,6 +43,11 @@ public class ZombieController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDead)
+        {
+            return;
+        }
+
         if (tryAttatchToNavmesh)
         {
             checkGrounded();
@@ -58,13 +65,7 @@ public class ZombieController : MonoBehaviour
                     FleePlayer();
                     break;
             }
-        }
-        
-
-        if(health <= 0)
-        {
-            KillZombie();
-        }        
+        }            
     }
 
 
@@ -134,10 +135,22 @@ public class ZombieController : MonoBehaviour
     public void damageZombie(float damage)
     {
         health -= damage;
+
+        if (health <= 0)
+        {
+            KillZombie();
+        }
     }
 
     public void KillZombie()
     {
-        Debug.Log("Git Gud Scrub");
+        if (hasTail)
+        {
+            target.GetComponent<TailController>().AddTail();
+        }
+
+        Destroy(gameObject, 5);
+
+        isDead = true;
     }
 }

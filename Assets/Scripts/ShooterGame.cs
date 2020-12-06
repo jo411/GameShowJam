@@ -10,21 +10,22 @@ public class ShooterGame : MonoBehaviour
     public float spread = 0f;
     public int shotCount = 1;
     public float range = 5f;
+    public float knockback;
     public GameObject cam;
     public LayerMask IgnoreMe;
-    public bool showBullets = false;
+    public GameObject fire;
 
     bool canFire = true;
     float fireRate;
     int magazineCount;
-    LineRenderer bullet;
     float bulletSmokeTime = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        fireRate = 1 / reloadSpeed;
+        fireRate = reloadSpeed;
         magazineCount = magazineSize;
+        fire.SetActive(false);
     }
 
     // Update is called once per frame
@@ -32,12 +33,12 @@ public class ShooterGame : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1")){
 
-            Fire();
-
-            magazineCount -= 1;
-
+            Fire();                  
+                       
             if (magazineCount <= 0)
             {
+                canFire = false;
+
                 Invoke("CanFire", fireRate);
 
                 magazineCount = magazineSize;
@@ -49,6 +50,12 @@ public class ShooterGame : MonoBehaviour
     {
         if (canFire)
         {
+            magazineCount -= 1;
+
+            fire.SetActive(true);
+
+            Invoke("FireHide", .5f);
+
             for (int i = 0; i < shotCount; i++)
             {
                 Vector3 forward = cam.transform.forward;
@@ -61,29 +68,24 @@ public class ShooterGame : MonoBehaviour
                 if (Physics.Raycast(face, dir, out hit, range, ~IgnoreMe))
                 {
                     Debug.DrawLine(face, hit.point, Color.grey, 2);
-
-                    if (showBullets)
-                    {
-                        bullet.SetPosition(0, face);
-                        bullet.SetPosition(1, hit.transform.position);
-
-                        Invoke("BulletHide", bulletSmokeTime);
-                    }
-
+                                
                     if (hit.collider.CompareTag("zombie"))
                     {
                         ZombieController zombie = hit.transform.gameObject.GetComponent<ZombieController>();
 
-                        //TODO: Add to Zombie Controller
                         zombie.damageZombie(damage);
+
+                        zombie.DisableNavmeshAgentForSeconds();
+
+                        Rigidbody rb = hit.transform.gameObject.GetComponent<Rigidbody>();
+
+                        rb.AddForce(forward * knockback, ForceMode.Impulse);
                     }
 
                     Debug.Log("Fired: " + i.ToString() + " " + face.ToString() + " " + dir.ToString() + hit.transform.position.ToString());
                 }
             }
         }
-
-        canFire = false;
     }
 
     void CanFire()
@@ -91,8 +93,8 @@ public class ShooterGame : MonoBehaviour
         canFire = true;
     }
 
-    void BulletHide()
+    void FireHide()
     {
-
+        fire.SetActive(false);
     }
 }
