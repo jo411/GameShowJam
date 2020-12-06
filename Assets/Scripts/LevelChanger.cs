@@ -7,14 +7,23 @@ public class LevelChanger : MonoBehaviour
 
     private string levelToLoad;
 
+    public static bool levelLoaded = false;
+
     public void FadeToLevel(string level)
     {
         levelToLoad = level;
         animator.SetTrigger("FadeOut");
+        levelLoaded = false;
     }
 
-    public void OnFadeComplete()
+    public void OnFadeOutComplete()
     {
         SceneManager.LoadSceneAsync(levelToLoad);
+        animator.SetTrigger("FadeIn");
+    }
+
+    public void OnFadeInComplete()
+    {
+        levelLoaded = true;
     }
 }
