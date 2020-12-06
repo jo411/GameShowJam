@@ -91,6 +91,11 @@ public class ZombieController : MonoBehaviour
 
     }
 
+    public void damageZombie(float damage)
+    {
+        health -= damage;
+    }
+
     public void KillZombie()
     {
         Debug.Log("Git Gud Scrub");
