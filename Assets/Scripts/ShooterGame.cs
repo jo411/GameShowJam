@@ -75,7 +75,7 @@ public class ShooterGame : MonoBehaviour
                         ZombieController zombie = hit.transform.gameObject.GetComponent<ZombieController>();
 
                         //TODO: Add to Zombie Controller
-                        zombie.health -= damage;
+                        zombie.damageZombie(damage);
                     }
 
                     Debug.Log("Fired: " + i.ToString() + " " + face.ToString() + " " + dir.ToString() + hit.transform.position.ToString());
