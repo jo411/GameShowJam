@@ -102,8 +102,8 @@ public class ShooterGame : MonoBehaviour
     {
 
         ParticleSystem.MainModule newMain = flashFX.main;
-        float min = Mathf.Max(playerRb.velocity.magnitude * 2, newMain.startSpeed.constantMin);
-        float max = Mathf.Max(playerRb.velocity.magnitude * 2, newMain.startSpeed.constantMax);
+        float min = playerRb.velocity.magnitude + newMain.startSpeed.constantMin;
+        float max = playerRb.velocity.magnitude + newMain.startSpeed.constantMax;
         newMain.startSpeed = new ParticleSystem.MinMaxCurve(min, max);
         flashFX.Play();
     }
