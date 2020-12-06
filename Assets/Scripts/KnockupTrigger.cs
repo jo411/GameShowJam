@@ -22,7 +22,13 @@ public class KnockupTrigger : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<RigidBodyFpsController>().LockoutControls();
+            RigidBodyFpsController rigidFPSObject = other.gameObject.GetComponent<RigidBodyFpsController>() as RigidBodyFpsController;
+
+            if(rigidFPSObject != null)
+            {
+                rigidFPSObject.LockoutControls();
+            }
+
         }else if(other.CompareTag("zombie"))
         {
             other.gameObject.GetComponent<ZombieController>().DisableNavmeshAgentForSeconds();
