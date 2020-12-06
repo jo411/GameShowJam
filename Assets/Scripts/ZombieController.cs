@@ -10,6 +10,12 @@ public class ZombieController : MonoBehaviour
     NavMeshAgent agent;
     Rigidbody rb;
 
+    public LayerMask groundedLayers;
+
+    bool tryAttatchToNavmesh = false;
+
+    bool grounded = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +28,12 @@ public class ZombieController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (tryAttatchToNavmesh)
+        {
+            checkGrounded();
+            EnableAgent();
+        }
+
         if(agent.enabled && agent.isOnNavMesh)
         {
             agent.SetDestination(target.transform.position);
@@ -29,10 +41,39 @@ public class ZombieController : MonoBehaviour
         
     }
 
+    void checkGrounded()
+    {
+        Ray ray = new Ray(transform.position, Vector3.down);
+        RaycastHit hitinfo;
+        if(Physics.Raycast(ray, out hitinfo,100,groundedLayers))
+        {
+             if(hitinfo.distance<.8)
+            {
+                grounded = true;
+            }else
+            {
+                grounded = false;
+            }
+        }
+    }
+  
     public void EnableAgent()
     {
-        agent.enabled = true;
-        rb.isKinematic = true;
+        if(tryAttatchToNavmesh == false)
+        {
+            tryAttatchToNavmesh = true;
+        }
+        else
+        {
+            if(grounded)
+            {
+                agent.enabled = true;
+                rb.isKinematic = true;
+                tryAttatchToNavmesh = false;
+            }
+           
+        }
+        
     }
 
     public void DisableNavmeshAgentForSeconds(float seconds = 2)
@@ -40,6 +81,8 @@ public class ZombieController : MonoBehaviour
         agent.enabled = false;
         rb.isKinematic = false;
         Invoke("EnableAgent", seconds);
+        grounded = false;
+
     }
 
 
