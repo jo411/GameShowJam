@@ -17,6 +17,11 @@ public class ZombieController : MonoBehaviour
     NavMeshAgent agent;
     Rigidbody rb;
 
+    public float minSpeed = 5;
+    public float maxSpeed = 13;
+
+    public GameObject tail;
+
     public LayerMask groundedLayers;
 
     bool tryAttatchToNavmesh = false;
@@ -28,7 +33,7 @@ public class ZombieController : MonoBehaviour
     bool hasTail = false;
     bool isDead = false;
 
-    float FleeDistance = 6.0f;
+    float FleeDistance = 15.0f;
 
     AIState currentState = AIState.Chasing;
     // Start is called before the first frame update
@@ -38,6 +43,11 @@ public class ZombieController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
+
+        agent.speed = Random.Range(minSpeed, maxSpeed);
+
+        Debug.Log(agent.speed);
+
     }
 
     // Update is called once per frame
@@ -146,11 +156,30 @@ public class ZombieController : MonoBehaviour
     {
         if (hasTail)
         {
-            target.GetComponent<TailController>().AddTail();
+            RemoveTail();
         }
 
         Destroy(gameObject, 5);
 
         isDead = true;
+    }
+
+    public void AddTail()
+    {
+        if (!isDead && grounded)
+        {
+            hasTail = true;
+            currentState = AIState.Fleeing;
+            tail.SetActive(true);
+        }
+
+    }
+
+    public void RemoveTail()
+    {
+        hasTail = false;
+        currentState = AIState.Chasing;
+        tail.SetActive(false);
+        target.GetComponent<TailController>().AddTail();
     }
 }

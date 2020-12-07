@@ -16,7 +16,7 @@ public class FallTrigger : MonoBehaviour
         {
 
             ZombieController zombiScript = other.gameObject.GetComponent<ZombieController>() as ZombieController;
-            //zombiScript.KillZombie();
+            zombiScript.KillZombie();
         }
     }
 }
