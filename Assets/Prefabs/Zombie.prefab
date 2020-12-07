@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1889575975319220461}
   - component: {fileID: 1889575975319220460}
   - component: {fileID: 3278138689477175396}
+  - component: {fileID: 6794275465711368115}
+  - component: {fileID: 8565164136523193940}
   m_Layer: 9
   m_Name: Zombie
   m_TagString: zombie
@@ -136,6 +138,34 @@ MonoBehaviour:
     chance: 6
   - tex: {fileID: 2800000, guid: 300b465e831c18644a9c7ba263644b9f, type: 3}
     chance: 1
+--- !u!136 &6794275465711368115
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889575975319220457}
+  m_Material: {fileID: 13400000, guid: bbccb10e69e4e464690b5769788b452e, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 0.8
+  m_Direction: 1
+  m_Center: {x: 0.8, y: 1.4, z: 0.6}
+--- !u!136 &8565164136523193940
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889575975319220457}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 0.8
+  m_Direction: 1
+  m_Center: {x: -0.8, y: 1.4, z: 0.6}
 --- !u!95 &6786542925947418261
 Animator:
   serializedVersion: 3
