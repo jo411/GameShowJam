@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class ShooterGame : MonoBehaviour
 {
     public float damage = 1f;
     public float reloadSpeed = 1;
+    public float timeBetweenShots = .3f;
     public int magazineSize = 2;
     public float spread = 0f;
     public int shotCount = 1;
@@ -20,6 +21,10 @@ public class ShooterGame : MonoBehaviour
     CameraShake camShake;
 
 
+    public Image ammo1;
+    public Image ammo2;
+
+    bool interShotCoolDown = false;
     bool canFire = true;
     float fireRate;
     int magazineCount;
@@ -39,8 +44,7 @@ public class ShooterGame : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1")){
 
-            Fire();                  
-                       
+            Fire();            
             if (magazineCount <= 0)
             {
                 canFire = false;
@@ -54,8 +58,10 @@ public class ShooterGame : MonoBehaviour
 
     void Fire()
     {
-        if (canFire)
+        if (canFire && !interShotCoolDown)
         {
+            interShotCoolDown = true;
+            Invoke("resetInterShotCooldown", timeBetweenShots);
             magazineCount -= 1;
             spawnShootFx();
 
@@ -89,12 +95,18 @@ public class ShooterGame : MonoBehaviour
                 }
             }
             camShake.shakeCam();
+            UpdateAmmoUI();
         }
     }
 
+    void resetInterShotCooldown()
+    {
+        interShotCoolDown = false;
+    }
     void CanFire()
     {
         canFire = true;
+        UpdateAmmoUI();
     }
 
 
@@ -106,6 +118,26 @@ public class ShooterGame : MonoBehaviour
         float max = playerRb.velocity.magnitude + newMain.startSpeed.constantMax;
         newMain.startSpeed = new ParticleSystem.MinMaxCurve(min, max);
         flashFX.Play();
+    }
+
+
+    void UpdateAmmoUI()
+    {
+        switch(magazineCount)
+        {
+            case 0:
+                ammo1.enabled = false;
+                ammo2.enabled = false;
+                break;
+            case 1:
+                ammo1.enabled = false;
+                ammo2.enabled = true;
+                break;
+            case 2:
+                ammo1.enabled = true;
+                ammo2.enabled = true;
+                break;
+        }
     }
 
     void FireHide()

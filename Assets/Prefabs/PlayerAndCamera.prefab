@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
+  m_RequiresDepthTextureOption: 1
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
@@ -323,6 +323,14 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 3870458669836409457}
+    - target: {fileID: -5967863735423640971, guid: ee361dce7bdcbbc43bf7f59ae009b55f, type: 3}
+      propertyPath: ammo1
+      value: 
+      objectReference: {fileID: 1010441863504058227}
+    - target: {fileID: -5967863735423640971, guid: ee361dce7bdcbbc43bf7f59ae009b55f, type: 3}
+      propertyPath: ammo2
+      value: 
+      objectReference: {fileID: 6385071206610836901}
     - target: {fileID: 6871190924486098828, guid: ee361dce7bdcbbc43bf7f59ae009b55f, type: 3}
       propertyPath: m_Name
       value: Gun
@@ -385,6 +393,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3870458669632837242}
     m_Modifications:
+    - target: {fileID: 2677190641742908039, guid: da52fc9ccc76af544b73c5d1a5bdd160, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7179215512766382690, guid: da52fc9ccc76af544b73c5d1a5bdd160, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -449,3 +461,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7179215512766382690, guid: da52fc9ccc76af544b73c5d1a5bdd160, type: 3}
   m_PrefabInstance: {fileID: 6203448862894807495}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1010441863504058227 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6346377107973770932, guid: da52fc9ccc76af544b73c5d1a5bdd160, type: 3}
+  m_PrefabInstance: {fileID: 6203448862894807495}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6385071206610836901 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1048010165182809186, guid: da52fc9ccc76af544b73c5d1a5bdd160, type: 3}
+  m_PrefabInstance: {fileID: 6203448862894807495}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
