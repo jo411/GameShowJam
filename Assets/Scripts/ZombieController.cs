@@ -169,14 +169,16 @@ public class ZombieController : MonoBehaviour
         isDead = true;
     }
 
-    public void AddTail()
+    public bool AddTail()
     {
-        if (!isDead && grounded)
+        if (!isDead)
         {
             hasTail = true;
             currentState = AIState.Fleeing;
             tail.SetActive(true);
+            return true;
         }
+        return false;
 
     }
 
