@@ -74,10 +74,13 @@ public class TailController : MonoBehaviour
 
     private void RemoveTail()
     {
-        hasTail = false;
-        FFLTimeLeft = FFLTime;
-        AddTailToZombie();
-        FFLObject.SetActive(true);
+        bool gotTail = AddTailToZombie();
+        if (gotTail)
+        {
+            hasTail = false;
+            FFLTimeLeft = FFLTime;
+            FFLObject.SetActive(true);
+        }
     }
 
     private void GetCloseZombies()
@@ -113,10 +116,10 @@ public class TailController : MonoBehaviour
         return Random.Range(0, 101) <= chanceTrue;
     }
 
-    private void AddTailToZombie()
+    private bool AddTailToZombie()
     {
        GameObject zombie = Zombies[Random.Range(0, Zombies.Count)];
        ZombieWithTail = zombie.GetComponent<ZombieController>() as ZombieController;
-       ZombieWithTail.AddTail();
+       return ZombieWithTail.AddTail();
     }
 }
