@@ -45,9 +45,6 @@ public class ZombieController : MonoBehaviour
         rb.isKinematic = true;
 
         agent.speed = Random.Range(minSpeed, maxSpeed);
-
-        Debug.Log(agent.speed);
-
     }
 
     // Update is called once per frame

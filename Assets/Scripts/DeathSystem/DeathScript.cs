@@ -52,7 +52,7 @@ public class DeathScript : MonoBehaviour
     {
         this.transform.position = location.transform.position;
         this.transform.rotation = location.transform.rotation;
-        cameraLook.ResetCamera();
+        cameraLook.ResetCamera(location);
         Input.ResetInputAxes();
     }
 

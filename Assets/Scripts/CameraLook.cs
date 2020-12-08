@@ -32,9 +32,9 @@ public class CameraLook : MonoBehaviour
 
     }
 
-    public void ResetCamera()
+    public void ResetCamera(GameObject location)
     {
-        xRotation = 0f;
-        yRotation = 0f;
+        xRotation = location.transform.eulerAngles.x;
+        yRotation = location.transform.eulerAngles.y;
     }
 }
