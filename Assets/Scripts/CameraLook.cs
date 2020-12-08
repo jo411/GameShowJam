@@ -6,7 +6,7 @@ public class CameraLook : MonoBehaviour
 {
     public float mouseSensitivity = 100f;    
 
-    private float xRotation=0f;
+    private float xRotation = 0f;
     private float yRotation = 0f;
 
     // Start is called before the first frame update
@@ -30,6 +30,11 @@ public class CameraLook : MonoBehaviour
 
         //transform.Rotate(Vector3.up * mouseX);
 
+    }
 
+    public void ResetCamera()
+    {
+        xRotation = 0f;
+        yRotation = 0f;
     }
 }
