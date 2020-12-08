@@ -154,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3870458669836409457}
   m_LocalRotation: {x: 0.10360817, y: -0, z: -0, w: 0.99461824}
-  m_LocalPosition: {x: 7.71, y: 3.28, z: -8.28}
+  m_LocalPosition: {x: 0, y: 3.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1243272197585951071}
@@ -298,9 +298,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04c8a83ffc3ef043963a7b55ba732af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasTail: 1
   FFLTime: 5
   StealRadias: 5
-  TheftCoolDown: 5
+  TheftCheckCoolDown: 2
   NumberOfZombiesToStealChance:
     serializedVersion: 2
     m_Curve:
@@ -325,6 +326,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  Zombies: []
 --- !u!114 &8379085057662481840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldSpawn: {fileID: 0}
+  MainCamera: {fileID: 3870458669836409457}
 --- !u!1001 &5628271137560159952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -429,7 +432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7179215512766382690, guid: da52fc9ccc76af544b73c5d1a5bdd160, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.71
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7179215512766382690, guid: da52fc9ccc76af544b73c5d1a5bdd160, type: 3}
       propertyPath: m_LocalPosition.y
@@ -437,7 +440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7179215512766382690, guid: da52fc9ccc76af544b73c5d1a5bdd160, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7179215512766382690, guid: da52fc9ccc76af544b73c5d1a5bdd160, type: 3}
       propertyPath: m_LocalRotation.w

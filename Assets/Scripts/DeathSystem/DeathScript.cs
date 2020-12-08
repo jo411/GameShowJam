@@ -6,6 +6,7 @@ public class DeathScript : MonoBehaviour
 {
     public GameObject worldSpawn;
     private GameObject lastCheckPoint;
+    public GameObject MainCamera;
 
     private void Start()
     {
@@ -38,6 +39,7 @@ public class DeathScript : MonoBehaviour
     {
         this.transform.position = location.transform.position;
         this.transform.rotation = location.transform.rotation;
+        MainCamera.transform.rotation = location.transform.rotation;
     }
 
     public void SetCheckpoint(GameObject location)
