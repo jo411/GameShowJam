@@ -20,6 +20,12 @@ public class ZombieController : MonoBehaviour
     public float minSpeed = 5;
     public float maxSpeed = 13;
 
+    public float minTurn = 100;
+    public float maxTurn = 200;
+
+    public float minAcceleration = 5;
+    public float maxAcceleration = 10;
+
     public GameObject tail;
 
     public LayerMask groundedLayers;
@@ -45,6 +51,8 @@ public class ZombieController : MonoBehaviour
         rb.isKinematic = true;
 
         agent.speed = Random.Range(minSpeed, maxSpeed);
+        agent.angularSpeed = Random.Range(minTurn, maxTurn);
+        agent.acceleration = Random.Range(minAcceleration, maxAcceleration);
     }
 
     // Update is called once per frame
