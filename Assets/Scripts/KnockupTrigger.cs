@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class KnockupTrigger : MonoBehaviour
 {    
     public float knockBackForce = 20f;
     public float height = .5f;
+    public List<AudioClip> sounds;
+    public AudioSource source;
     // Start is called before the first frame update
     void Start()
     {
-        
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,10 +31,12 @@ public class KnockupTrigger : MonoBehaviour
             {
                 rigidFPSObject.LockoutControls();
             }
-
-        }else if(other.CompareTag("zombie"))
+            playSound();
+        }
+        else if(other.CompareTag("zombie"))
         {
             other.gameObject.GetComponent<ZombieController>().DisableNavmeshAgentForSeconds();
+            playSound();
         }
       
         Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
@@ -42,6 +47,13 @@ public class KnockupTrigger : MonoBehaviour
             knockbackdir = knockbackdir.normalized;
             
             rb.AddForce(knockbackdir * knockBackForce, ForceMode.Impulse);
+            
         }
+    }
+
+
+    void playSound()
+    {
+        source.PlayOneShot(Extensions.GetRandomElement(sounds));
     }
 }
