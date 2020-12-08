@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-[System.Serializable]
 public class TailController : MonoBehaviour
 {
     public bool hasTail = true;
@@ -11,12 +11,13 @@ public class TailController : MonoBehaviour
     public float TheftCheckCoolDown = 2f;
     public AnimationCurve NumberOfZombiesToStealChance = AnimationCurve.Linear(0, 0, 50, 80);
     
-    private float FFLTimePassed = 0f;
+    private float FFLTimeLeft = 0f;
     private float TimeSinceLastTheft = 0f;
 
+    public GameObject FFLObject;
+    public Text FFLtext;
 
-    [SerializeReference]
-    private List<GameObject> Zombies = null;
+    private List<GameObject> Zombies;
 
 
     private DeathScript deathScript = null;
@@ -25,7 +26,8 @@ public class TailController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        deathScript = this.GetComponent<DeathScript>() as DeathScript;
+        Zombies = new List<GameObject>();
+        deathScript = GetComponent<DeathScript>() as DeathScript;
         Random.InitState((int)System.DateTime.Now.Ticks);
     }
 
@@ -34,9 +36,12 @@ public class TailController : MonoBehaviour
     {
         if(!hasTail)
         {
-            FFLTimePassed += Time.deltaTime;
+            FFLTimeLeft -= Time.deltaTime;
 
-            if(FFLTimePassed >= FFLTime)
+            FFLtext.text = FFLTimeLeft.ToString("00");
+
+
+            if (FFLTimeLeft < 0)
             {
                 deathScript.KillPlayer();
                 
@@ -64,13 +69,15 @@ public class TailController : MonoBehaviour
     public void AddTail()
     {
         hasTail = true;
+        FFLObject.SetActive(false);
     }
 
     private void RemoveTail()
     {
         hasTail = false;
-        FFLTimePassed = 0f;
+        FFLTimeLeft = FFLTime;
         AddTailToZombie();
+        FFLObject.SetActive(true);
     }
 
     private void GetCloseZombies()
