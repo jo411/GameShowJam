@@ -53,7 +53,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnUnit()
     {
-        Debug.Log("TrySpawn");
+        //Debug.Log("TrySpawn");
         Vector3 pos = GetSpawnLocation();
 
         if(pos!=Vector3.positiveInfinity)
@@ -70,7 +70,7 @@ public class SpawnManager : MonoBehaviour
 
         while(!foundLoc)
         {
-            Debug.Log("Try");
+            //Debug.Log("Try");
             if (tries > maxSpawnTries) { break; }
 
             var dir = Random.insideUnitSphere;
@@ -90,7 +90,7 @@ public class SpawnManager : MonoBehaviour
             tries++;
         }
 
-        Debug.Log("Fail");
+        //Debug.Log("Fail");
         return Vector3.positiveInfinity;
     } 
     
