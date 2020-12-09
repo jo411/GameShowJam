@@ -102,10 +102,13 @@ MonoBehaviour:
   gravity: 10
   maxVelocityChange: 10
   canJump: 1
-  jumpHeight: 1
+  jumpHeight: 0.7
   mouseVerticalSensitivity: 200
   PlayerCamera: {fileID: 0}
   spinningPlatform: {fileID: 0}
+  groundedLayers:
+    serializedVersion: 2
+    m_Bits: 787
 --- !u!114 &3000212561576772962
 MonoBehaviour:
   m_ObjectHideFlags: 0

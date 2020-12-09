@@ -23,17 +23,21 @@ public class RigidBodyFpsController : MonoBehaviour
 
 	public Rigidbody spinningPlatform;
 
-	void Awake()
+	public LayerMask groundedLayers;
+
+	float rayYoffset = .5f;
+
+    void Awake()
     {
 		rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         rb.useGravity = false;
 		Cursor.lockState = CursorLockMode.Locked;
-
 	}
 
 	void FixedUpdate()
 	{
+		checkGrounded();
 		//rigidBody.rotation.SetLookRotation(PlayerCamera.rotation.eulerAngles, Vector3.up);
 		if (grounded && !isLockedOut)
 		{
@@ -85,9 +89,31 @@ public class RigidBodyFpsController : MonoBehaviour
 		grounded = false;
 	}
 
+
+	void checkGrounded()
+	{
+		Ray ray = new Ray(transform.position+new Vector3(0,rayYoffset,0), Vector3.down);
+		RaycastHit hitinfo;
+		if (Physics.Raycast(ray, out hitinfo, 100, groundedLayers))
+		{
+			float dist = ray.origin.y - hitinfo.point.y;
+			Debug.Log(dist);
+			Debug.DrawLine(ray.origin,hitinfo.point);
+			if (dist < .6)
+			{
+				grounded = true;
+			}
+			else
+			{
+				grounded = false;
+			}
+		}
+		
+	}
+
 	void OnCollisionStay()
 	{
-		grounded = true;
+		//grounded = true;
 	}
 
 	float CalculateJumpVerticalSpeed()
