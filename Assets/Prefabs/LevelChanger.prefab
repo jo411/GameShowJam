@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6995225982325089617}
   m_Layer: 0
   m_Name: LevelChanger
-  m_TagString: Untagged
+  m_TagString: levelChanger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

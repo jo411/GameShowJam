@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ButtonController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ButtonController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler 
 {
 
     public Text text;
@@ -17,6 +17,11 @@ public class ButtonController : MonoBehaviour, IPointerEnterHandler, IPointerExi
     }
 
     public void OnPointerExit(PointerEventData eventData)
+    {
+        text.color = baseColor;
+    }
+
+    void OnDisable()
     {
         text.color = baseColor;
     }

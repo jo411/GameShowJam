@@ -5,8 +5,19 @@ using UnityEngine;
 public class DontDestroyOnLoad : MonoBehaviour
 {
 
+    private GameObject instance;
+
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        int count = GameObject.FindGameObjectsWithTag(this.tag).Length;     
+
+        if (count > 1)
+        {
+            Object.Destroy(gameObject);
+        } else
+        {
+            DontDestroyOnLoad(this);
+        }
+        
     }
 }

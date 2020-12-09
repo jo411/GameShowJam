@@ -38,19 +38,18 @@ public class PauseScript : MonoBehaviour
         isPaused = true;
         Time.timeScale = 0f;
         AudioListener.pause = true;
-        PauseMenu.SetActive(true);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-
+        PauseMenu.SetActive(true);
     }
 
     public void deactivateMenu()
     {
         isPaused = false;
-        PauseMenu.SetActive(false);
         AudioListener.pause = false;
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
+        PauseMenu.SetActive(false);
     }
 
     public void Quit()
@@ -60,7 +59,6 @@ public class PauseScript : MonoBehaviour
 
     public void MainMenu()
     {
-
         deactivateMenu();
 
         Cursor.visible = true;
