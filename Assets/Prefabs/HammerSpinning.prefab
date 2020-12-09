@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0e6d077dd7418b40b36849a3f3a9367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playSoundEffects: 1
   knockBackForce: 20
   height: 0.5
   sounds:
@@ -236,7 +237,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8c2ea10bfbb12d648b08c7d5a866a171, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.136
   m_Pitch: 1
   Loop: 0

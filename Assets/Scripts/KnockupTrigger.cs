@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class KnockupTrigger : MonoBehaviour
 {    
+    public bool playSoundEffects = true;
     public float knockBackForce = 20f;
     public float height = .5f;
     public List<AudioClip> sounds;
@@ -54,6 +55,9 @@ public class KnockupTrigger : MonoBehaviour
 
     void playSound()
     {
-        source.PlayOneShot(Extensions.GetRandomElement(sounds));
+        if (playSoundEffects)
+        {
+            source.PlayOneShot(Extensions.GetRandomElement(sounds));
+        }
     }
 }

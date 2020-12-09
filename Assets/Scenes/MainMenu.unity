@@ -785,6 +785,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
 --- !u!1001 &93119022
@@ -1671,6 +1679,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
 --- !u!1001 &198844275
@@ -2377,9 +2393,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
       propertyPath: knockBackForce
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
@@ -2515,9 +2539,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
       propertyPath: knockBackForce
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
@@ -2727,6 +2759,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
 --- !u!4 &256351744 stripped
@@ -2795,6 +2835,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3046335798639353741, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2931,9 +2979,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
       propertyPath: knockBackForce
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
@@ -9880,6 +9936,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
 --- !u!4 &446337207 stripped
@@ -12181,6 +12245,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
 --- !u!1001 &619506621
@@ -12244,6 +12316,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3046335798639353741, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -12458,9 +12538,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
       propertyPath: knockBackForce
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
@@ -14079,6 +14167,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
 --- !u!4 &767520386 stripped
@@ -14326,6 +14422,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3046335798639353741, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -16117,6 +16221,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
 --- !u!1001 &950962896
@@ -16249,6 +16361,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3046335798639353741, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -17265,6 +17385,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3046335798639353741, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -18581,6 +18709,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3046335798639353741, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -21188,6 +21324,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
 --- !u!1001 &1326192588
@@ -23128,9 +23272,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
       propertyPath: knockBackForce
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
@@ -23274,6 +23426,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3046335798639353741, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -23667,6 +23827,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
 --- !u!1001 &1594000042
@@ -23958,6 +24126,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3046335798639353741, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -24551,9 +24727,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
       propertyPath: knockBackForce
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
@@ -28312,9 +28496,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
       propertyPath: knockBackForce
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
@@ -29164,6 +29356,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3046335798639353741, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764471984432467796, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092651551209649791, guid: d517ff9cbf846754494cbc5f60500664, type: 3}
+      propertyPath: playSoundEffects
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
