@@ -25,6 +25,8 @@ public class ZombieController : MonoBehaviour
 
     public float minAcceleration = 5;
     public float maxAcceleration = 10;
+    public float maxLife = 15f;
+
 
     public GameObject tail;
 
@@ -40,6 +42,7 @@ public class ZombieController : MonoBehaviour
     bool isDead = false;
 
     float FleeDistance = 15.0f;
+    
 
     AIState currentState = AIState.Chasing;
     // Start is called before the first frame update
@@ -53,6 +56,12 @@ public class ZombieController : MonoBehaviour
         agent.speed = Random.Range(minSpeed, maxSpeed);
         agent.angularSpeed = Random.Range(minTurn, maxTurn);
         agent.acceleration = Random.Range(minAcceleration, maxAcceleration);
+
+        if(maxLife>0)
+        {
+            Invoke("KillifNotTail", maxLife);
+        }
+       
     }
 
     // Update is called once per frame
@@ -62,7 +71,7 @@ public class ZombieController : MonoBehaviour
         {
             return;
         }
-
+        
         if (tryAttatchToNavmesh)
         {
             checkGrounded();
@@ -80,10 +89,19 @@ public class ZombieController : MonoBehaviour
                     FleePlayer();
                     break;
             }
-        }            
+        }
+
     }
 
-
+    void KillifNotTail()
+    {
+        //Debug.Log("Try Kill)");
+        if(!hasTail)
+        {
+            //Debug.Log("Did kill");
+            KillZombie();
+        }
+    }
 
     void TargetPlayer()
     {

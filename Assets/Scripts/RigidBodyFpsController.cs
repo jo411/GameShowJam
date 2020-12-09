@@ -26,7 +26,7 @@ public class RigidBodyFpsController : MonoBehaviour
 	public LayerMask groundedLayers;
 
 	float rayYoffset = .5f;
-
+	
     void Awake()
     {
 		rb = GetComponent<Rigidbody>();
@@ -97,7 +97,6 @@ public class RigidBodyFpsController : MonoBehaviour
 		if (Physics.Raycast(ray, out hitinfo, 100, groundedLayers))
 		{
 			float dist = ray.origin.y - hitinfo.point.y;
-			Debug.Log(dist);
 			Debug.DrawLine(ray.origin,hitinfo.point);
 			if (dist < .6)
 			{

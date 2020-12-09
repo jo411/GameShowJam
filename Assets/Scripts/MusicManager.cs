@@ -11,7 +11,7 @@ public class MusicManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("TryPlayNewSong", .2f, 20.0f);
+        InvokeRepeating("TryPlayNewSong", .2f, 3.0f);
     }
 
     void TryPlayNewSong()

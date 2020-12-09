@@ -53,17 +53,18 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnUnit()
     {
+        bool valid;
         //Debug.Log("TrySpawn");
-        Vector3 pos = GetSpawnLocation();
+        Vector3 pos = GetSpawnLocation(out valid);
 
-        if(pos!=Vector3.positiveInfinity)
+        if(pos!=Vector3.positiveInfinity && valid)
         {
-            GameObject spawned = Instantiate(spawnPrefab);
+            GameObject spawned = Instantiate(spawnPrefab,pos,Quaternion.identity);
             spawns.Add(spawned);
         }
     }
 
-    Vector3 GetSpawnLocation()
+    Vector3 GetSpawnLocation(out bool valid)
     {
         bool foundLoc = false;
         int tries = 0;
@@ -75,23 +76,28 @@ public class SpawnManager : MonoBehaviour
 
             var dir = Random.insideUnitSphere;
             Vector3 spawnpos = dir * minDelta;
-            spawnpos.y = 0;
+            
 
             spawnpos += dir * minSpawnRadius;
+
+            spawnpos = player.transform.position + spawnpos;
 
             NavMeshHit hit;
 
             Vector3 finalPosition = Vector3.zero;
             if (NavMesh.SamplePosition(spawnpos, out hit, checkRadius, 1))
             {
-                finalPosition = hit.position;
-                return finalPosition;
-            }            
+                if(Vector3.Distance(player.transform.position,finalPosition)>minSpawnRadius)
+                {
+                    finalPosition = hit.position;
+                    valid = true;
+                    return finalPosition;
+                }               
+            }
 
             tries++;
         }
-
-        //Debug.Log("Fail");
+        valid = false;
         return Vector3.positiveInfinity;
     } 
     
