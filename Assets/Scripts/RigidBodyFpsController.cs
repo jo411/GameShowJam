@@ -100,7 +100,7 @@ public class RigidBodyFpsController : MonoBehaviour
 		isLockedOut = false;
     }
 
-	public void LockoutControls(int seconds=1)
+	public void LockoutControls(float seconds=1)
     {
 		isLockedOut = true;
 		Invoke("UnlockControls", seconds);

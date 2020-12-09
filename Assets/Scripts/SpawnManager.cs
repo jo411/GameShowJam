@@ -75,6 +75,7 @@ public class SpawnManager : MonoBehaviour
 
             var dir = Random.insideUnitSphere;
             Vector3 spawnpos = dir * minDelta;
+            spawnpos.y = 0;
 
             spawnpos += dir * minSpawnRadius;
 
