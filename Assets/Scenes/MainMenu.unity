@@ -22870,7 +22870,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 09227344356c15343a608b91bdbfdce6, type: 3}
-    m_FontSize: 18
+    m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -22902,7 +22902,9 @@ MonoBehaviour:
 
     Left Click-Shoot
 
-    Esc-Pause'
+    Esc-Pause
+
+    Space-Jump'
 --- !u!222 &1343999033
 CanvasRenderer:
   m_ObjectHideFlags: 0
