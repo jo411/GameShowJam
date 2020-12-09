@@ -4728,7 +4728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8570536479483709983, guid: 08c172f7a0987784a987ee1e341cabc6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 32
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08c172f7a0987784a987ee1e341cabc6, type: 3}
@@ -6840,7 +6840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8570536479483709983, guid: 08c172f7a0987784a987ee1e341cabc6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 32
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08c172f7a0987784a987ee1e341cabc6, type: 3}
