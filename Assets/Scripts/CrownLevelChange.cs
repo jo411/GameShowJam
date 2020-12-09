@@ -22,6 +22,10 @@ public class CrownLevelChange : MonoBehaviour
 
    void OnTriggerEnter(Collider other)
     {
+        if(!other.CompareTag("Player"))
+        {
+            return;
+        }
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         if (LevelChangerObj != null)
