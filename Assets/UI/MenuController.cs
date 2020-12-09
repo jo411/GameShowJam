@@ -9,6 +9,7 @@ public class MenuController : MonoBehaviour
     public GameObject mainCamera;
     public GameObject mainMenuLocation;
     public GameObject creditsMenuLocation;
+    public GameObject howToPlayLocation;
     public GameObject levelMenuLocation;
     public GameObject cameraStart;
     public Animator animator;
@@ -38,6 +39,12 @@ public class MenuController : MonoBehaviour
     {
         CameraMovmentController cameraMovment = mainCamera.GetComponent<CameraMovmentController>();
         cameraMovment.setCameraTarget(creditsMenuLocation);
+    }
+
+    public void ButtonHowToPlay()
+    {
+        CameraMovmentController cameraMovment = mainCamera.GetComponent<CameraMovmentController>();
+        cameraMovment.setCameraTarget(howToPlayLocation);
     }
 
     public void ButtonQuit()
