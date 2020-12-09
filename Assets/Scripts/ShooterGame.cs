@@ -15,12 +15,14 @@ public class ShooterGame : MonoBehaviour
     public GameObject cam;
     public LayerMask IgnoreMe;
     public ParticleSystem flashFX;
+    public AudioClip emptySound;
+    public List<AudioClip> shotSounds;
 
     public Rigidbody playerRb;
 
     CameraShake camShake;
 
-
+    public AudioSource audioSource;
     public Image ammo1;
     public Image ammo2;
 
@@ -37,6 +39,7 @@ public class ShooterGame : MonoBehaviour
         magazineCount = magazineSize;
         camShake = cam.GetComponent<CameraShake>();
         playerRb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -57,9 +60,15 @@ public class ShooterGame : MonoBehaviour
     }
 
     void Fire()
-    {
+    {       
+        if(!canFire)
+        {           
+            audioSource.PlayOneShot(emptySound);
+        }
+
         if (canFire && !interShotCoolDown)
         {
+            audioSource.PlayOneShot(Extensions.GetRandomElement(shotSounds));
             interShotCoolDown = true;
             Invoke("resetInterShotCooldown", timeBetweenShots);
             magazineCount -= 1;

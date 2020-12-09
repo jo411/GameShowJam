@@ -20,6 +20,7 @@ public class MenuController : MonoBehaviour
     public void Awake()
     {
         Random.InitState((int)System.DateTime.Now.Ticks);
+        
     }
 
     public void ButtonStart()

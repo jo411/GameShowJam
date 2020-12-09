@@ -13,4 +13,9 @@ public static class Extensions
         return list[Random.Range(0, list.Count)];
     }
 
+    public static bool checkPercentage(int chanceTrue)
+    {
+        return Random.Range(0, 101) <= chanceTrue;
+    }
+
 }

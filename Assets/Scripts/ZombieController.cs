@@ -42,7 +42,13 @@ public class ZombieController : MonoBehaviour
     bool isDead = false;
 
     float FleeDistance = 15.0f;
-    
+
+    public List<AudioClip> sounds;
+    public AudioSource audioSource;
+    public float soundDelay = 1f;
+    public int soundChance = 30;
+    float soundTimer = 0f;
+
 
     AIState currentState = AIState.Chasing;
     // Start is called before the first frame update
@@ -61,6 +67,8 @@ public class ZombieController : MonoBehaviour
         {
             Invoke("KillifNotTail", maxLife);
         }
+
+        audioSource = GetComponent<AudioSource>();
        
     }
 
@@ -71,7 +79,9 @@ public class ZombieController : MonoBehaviour
         {
             return;
         }
-        
+
+        checkPlaySound();
+
         if (tryAttatchToNavmesh)
         {
             checkGrounded();
@@ -92,7 +102,19 @@ public class ZombieController : MonoBehaviour
         }
 
     }
-
+    void checkPlaySound()
+    {
+        soundTimer += Time.deltaTime;
+        if(soundTimer>=soundDelay)
+        {
+            if(Extensions.checkPercentage(soundChance))
+            {
+                audioSource.clip = Extensions.GetRandomElement(sounds);
+                audioSource.Play();
+            }
+            soundTimer = 0;
+        }
+    }
     void KillifNotTail()
     {
         //Debug.Log("Try Kill)");

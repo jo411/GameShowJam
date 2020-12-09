@@ -19,6 +19,10 @@ public class TailController : MonoBehaviour
 
     private List<GameObject> Zombies;
 
+    public AudioClip TailStealSound;
+    public AudioClip TailReturnSound;
+
+    AudioSource audioSource;
 
     private DeathScript deathScript = null;
     private ZombieController ZombieWithTail = null;
@@ -29,6 +33,7 @@ public class TailController : MonoBehaviour
         Zombies = new List<GameObject>();
         deathScript = GetComponent<DeathScript>() as DeathScript;
         Random.InitState((int)System.DateTime.Now.Ticks);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -70,6 +75,7 @@ public class TailController : MonoBehaviour
     {
         hasTail = true;
         FFLObject.SetActive(false);
+        audioSource.PlayOneShot(TailReturnSound,.8f);
     }
 
     private void RemoveTail()
@@ -80,6 +86,7 @@ public class TailController : MonoBehaviour
             hasTail = false;
             FFLTimeLeft = FFLTime;
             FFLObject.SetActive(true);
+            audioSource.PlayOneShot(TailStealSound,.8f);
         }
     }
 

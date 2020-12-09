@@ -337,6 +337,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   FFLObject: {fileID: 4452619333794745749}
   FFLtext: {fileID: 471865394508873265}
+  TailStealSound: {fileID: 8300000, guid: 04ef278566662fe4f945f47760a1a26b, type: 3}
+  TailReturnSound: {fileID: 8300000, guid: 5ae6ca590e9fdc44a8bd7bc37b9435b7, type: 3}
 --- !u!114 &8379085057662481840
 MonoBehaviour:
   m_ObjectHideFlags: 0
