@@ -30,7 +30,7 @@ public class KnockupTrigger : MonoBehaviour
 
             if(rigidFPSObject != null)
             {
-                rigidFPSObject.LockoutControls();
+                rigidFPSObject.LockoutControls(.5f);
             }
             playSound();
         }

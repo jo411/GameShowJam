@@ -102,7 +102,7 @@ MonoBehaviour:
   gravity: 10
   maxVelocityChange: 10
   canJump: 1
-  jumpHeight: 0.5
+  jumpHeight: 1
   mouseVerticalSensitivity: 200
   PlayerCamera: {fileID: 0}
   spinningPlatform: {fileID: 0}
