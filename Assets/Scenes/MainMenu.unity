@@ -22043,7 +22043,7 @@ BoxCollider:
   m_GameObject: {fileID: 1301469115}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2.2, y: 1.4422646, z: 2.2}
   m_Center: {x: 0, y: -0.22113228, z: 0}
@@ -22068,12 +22068,12 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1301469115}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.73170733, b: 0, a: 1}
-  m_Intensity: 0
+  m_Color: {r: 1, g: 0.8533139, b: 0, a: 1}
+  m_Intensity: 2
   m_Range: 20
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
