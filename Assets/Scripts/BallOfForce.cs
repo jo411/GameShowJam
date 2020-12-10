@@ -53,7 +53,7 @@ public class BallOfForce : MonoBehaviour
 
             rb.AddForce(knockbackdir * knockBackForce + rb.velocity, ForceMode.Impulse);
 
-            Debug.Log("Hit");
+            //Debug.Log("Hit");
         }
     }
 

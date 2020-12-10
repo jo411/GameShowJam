@@ -9,7 +9,7 @@ public class BallColor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Color Set");
+       // Debug.Log("Color Set");
 
         Renderer color = GetComponent<Renderer>();
         
