@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minSpeed: 5
-  maxSpeed: 13
+  maxSpeed: 9
   minTurn: 100
   maxTurn: 200
   minAcceleration: 5
