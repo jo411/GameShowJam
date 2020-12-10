@@ -13125,6 +13125,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerAndCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 7942340808046127118, guid: 685d8c0baf94e7441ae0c62a76bd8ba6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8379085057662481840, guid: 685d8c0baf94e7441ae0c62a76bd8ba6, type: 3}
       propertyPath: worldSpawn
       value: 
